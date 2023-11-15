@@ -1,10 +1,15 @@
-class Queue
-{
-    Queue();
-    Queue(int a);
-    virtual ~Queue(); 
-    Queue(const Queue &queue);
+// Queue.h
+#ifndef QUEUE_H
+#define QUEUE_H
 
-    void Push(int a);
-    int Pop();
+// Abstract class Queue
+class Queue {
+public:
+    virtual void enqueue(int value) = 0;
+    virtual void dequeue() = 0;
+    virtual void displayContents() const = 0;
+    virtual ~Queue() = default;
 };
+
+#endif // QUEUE_H
+
