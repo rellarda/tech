@@ -1,12 +1,12 @@
-// DequeQueue.cpp
-#include "DequeQueue.h"
+// StackQueue.cpp
+#include "StackQueue.h"
 #include <iostream>
 
-DequeQueue::DequeQueue(int capacity) : capacity(capacity), front(0), rear(0) {
+StackQueue::StackQueue(int capacity) : capacity(capacity), front(0), rear(0) {
     data = new int[capacity];
 }
 
-void DequeQueue::enqueue(int value) {
+void StackQueue::enqueue(int value) {
     if (rear == capacity) {
         std::cerr << "Queue is full\n";
         return;
@@ -15,7 +15,7 @@ void DequeQueue::enqueue(int value) {
     data[rear++] = value;
 }
 
-int DequeQueue::dequeue() {
+int StackQueue::dequeue() {
     if (front == rear) {
         std::cerr << "Queue is empty\n";
         return -1; // Error value for an empty queue
@@ -25,14 +25,14 @@ int DequeQueue::dequeue() {
     return value;
 }
 
-void DequeQueue::display() const {
+void StackQueue::display() const {
     for (int i = front; i < rear; ++i) {
         std::cout << data[i] << " ";
     }
     std::cout << "\n";
 }
 
-DequeQueue::~DequeQueue() {
+StackQueue::~StackQueue() {
     delete[] data;
 }
 

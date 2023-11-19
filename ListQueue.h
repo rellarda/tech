@@ -1,16 +1,15 @@
 // ListQueue.h
-#ifndef LIST_QUEUE_H
-#define LIST_QUEUE_H
+#ifndef LISTQUEUE_H
+#define LISTQUEUE_H
+
 #include "Queue.h"
 
-// Concrete class implementing Queue using linked list
 class ListQueue : public Queue {
 private:
     struct Node {
         int data;
         Node* next;
-
-        Node(int value) : data(value), next(nullptr) {}
+        Node(int val) : data(val), next(nullptr) {}
     };
 
     Node* front;
@@ -18,12 +17,11 @@ private:
 
 public:
     ListQueue();
-    ~ListQueue();
-
     void enqueue(int value) override;
-    void dequeue() override;
-    void displayContents() const override;
+    int dequeue() override;
+    void display() const override;
+    ~ListQueue();
 };
 
-#endif // LIST_QUEUE_H
+#endif // LISTQUEUE_H
 

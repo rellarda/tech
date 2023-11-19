@@ -1,10 +1,10 @@
-// DequeQueue.h
-#ifndef DEQUEQUEUE_H
-#define DEQUEQUEUE_H
+// StackQueue.h
+#ifndef STACKQUEUE_H
+#define STACKQUEUE_H
 
 #include "Queue.h"
 
-class DequeQueue : public Queue {
+class StackQueue : public Queue {
 private:
     int* data;
     int capacity;
@@ -12,12 +12,12 @@ private:
     int rear;
 
 public:
-    DequeQueue(int capacity);
+    StackQueue(int capacity);
     void enqueue(int value) override;
     int dequeue() override;
     void display() const override;
-    ~DequeQueue();
+    ~StackQueue();
 };
 
-#endif // DEQUEQUEUE_H
+#endif // STACKQUEUE_H
 
